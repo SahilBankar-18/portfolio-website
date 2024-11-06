@@ -28,7 +28,7 @@ const Navbar = () => {
   if (!mounted) return null; // Prevent hydration mismatch errors
 
   return (
-    <nav className="container fixed bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300 mx-auto px-4 py-6 flex justify-between items-center z-10">
+    <nav className="container fixed bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300 mx-auto px-4 py-4 flex justify-between items-center z-10">
       <div className="flex items-center space-x-4">
         <Image
           src="/placeholder.svg"
@@ -37,7 +37,6 @@ const Navbar = () => {
           height={50}
           className="rounded-full"
         />
-        <span className="font-bold text-xl">RAM MAHESHWARI</span>
       </div>
       <div className="hidden md:flex items-center space-x-6">
         <Link href="/" className="hover:text-purple-600 transition-colors">HOME</Link>

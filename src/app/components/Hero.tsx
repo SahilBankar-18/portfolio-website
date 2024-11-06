@@ -1,8 +1,8 @@
 "use client";
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { TypeAnimation } from "react-type-animation";
+import { FaDownload } from "react-icons/fa";
 import profile from "@/app/Images/profile.png";
 
 export default function Hero() {
@@ -12,10 +12,17 @@ export default function Hero() {
     setMounted(true);
   }, []);
 
+  const handleDownload = () => {
+    const link = document.createElement("a");
+    link.href = "/SahilSBankar.pdf";
+    link.download = "SahilSBankar.pdf";
+    link.click();
+  };
+
   if (!mounted) return null;
 
   return (
-    <div className="min-h-screen md:pt-24 bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
+    <div className="min-h-screen md:pt-20 bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
       <main className="container h-full mx-auto px-4 py-20 flex flex-col items-center text-center gap-y-4">
         <div className="rounded-full md:h-32 h-32 bg-purple relative">
           <Image
@@ -27,9 +34,9 @@ export default function Hero() {
           />
         </div>
         <h1 className="text-5xl font-bold text-gray-900 dark:text-white">
-          HEY, I'M SAHIL BANKAR
+          HEY, I&apos;M SAHIL BANKAR
         </h1>
-        <div className="text-xl h-20 text-gray-800 dark:text-gray-200">
+        <div className="text-xl text-gray-800 dark:text-gray-200">
           <TypeAnimation
             sequence={[
               "I am a Software Engineer",
@@ -48,12 +55,13 @@ export default function Hero() {
           Specialized in developing and overseeing websites and web applications
           that play a pivotal role in achieving business success.
         </p>
-        <Link
-          href="/projects"
-          className="bg-purple text-white px-8 py-3 rounded-full font-bold hover:bg-purple-700 transition-colors"
+        <button
+          onClick={handleDownload}
+          className="flex items-center gap-2 bg-purple text-white px-8 py-3 rounded-full font-bold hover:bg-purple-700 transition-colors"
         >
-          PROJECTS
-        </Link>
+          <FaDownload />
+          Download CV
+        </button>
       </main>
     </div>
   );

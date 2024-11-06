@@ -21,6 +21,7 @@ interface Project {
   name: string;
   description: string;
   type: "personal" | "official";
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   image: any;
   codeLink?: string;
   projectLink: string;
@@ -114,14 +115,14 @@ export default function Projects() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="w-full dark:bg-gray-900 py-12 md:py-24 lg:py-32"
+      className="w-full dark:bg-gray-900 pt-12"
     >
       <div className="container px-4 md:px-6">
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.5 }}
-          className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-4"
+          className="text-3xl font-bold sm:text-4xl text-center mb-4"
         >
           PROJECTS
         </motion.h2>
@@ -203,7 +204,7 @@ function ProjectItem({
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.1, duration: 0.5 }}
-      className={`flex flex-col ${
+      className={`flex flex-col md:justify-center md:items-center ${
         isEven ? "md:flex-row-reverse" : "md:flex-row"
       } gap-8 mb-16`}
     >
@@ -231,7 +232,7 @@ function ProjectItem({
           <div className="w-96 h-4 bg-gray-600 mx-auto -mt-2 rounded-md"></div>
         </div>
       </motion.div>
-      <div className="flex-1 flex flex-col justify-center">
+      <div className="flex-1 flex flex-col text-center px-6 justify-center">
         <motion.h3
           initial={{ opacity: 0, x: isEven ? 20 : -20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -252,9 +253,9 @@ function ProjectItem({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: index * 0.1 + 0.4, duration: 0.5 }}
-          className="flex gap-4"
+          className="flex justify-center items-center gap-4"
         >
-          <Button>
+          <button className="flex items-center gap-2 bg-purple text-white px-8 py-3 rounded-full font-bold hover:bg-purple-700 transition-colors">
             <a
               href={project.projectLink}
               target="_blank"
@@ -262,7 +263,7 @@ function ProjectItem({
             >
               View Project
             </a>
-          </Button>
+          </button>
           {project.type === "personal" && project.codeLink && (
             <Button variant="outline">
               <a
