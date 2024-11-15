@@ -79,7 +79,7 @@ export default function About() {
   };
 
   return (
-    <div className="container mx-auto h-full bg-gray-100 dark:bg-gray-900 py-12 px-4">
+    <div className="container mx-auto h-full dark:bg-gray-900 py-12 px-4">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Sidebar Buttons */}
         <div className="space-y-6">

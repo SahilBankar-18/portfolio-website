@@ -53,6 +53,10 @@ export default function Contact() {
         <div className="font-sans w-screen dark:bg-gray-900 py-4 mx-auto relative rounded-3xl overflow-hidden">
             <div className="absolute -bottom-6 -left-6 w-20 h-20 rounded-full bg-purple"></div>
             <div className="absolute -top-6 -right-6 w-20 h-20 rounded-full bg-purple"></div>
+            {/* Heading */}
+            <h1 className="text-3xl sm:text-4xl tracking-normal font-bold text-center text-gray-800 dark:text-white mb-8">
+                Let’s Talk
+            </h1>
 
             <div className="grid md:grid-cols-2 gap-8 py-8 px-6">
                 <div className="text-center flex flex-col items-center justify-center">
@@ -67,7 +71,7 @@ export default function Contact() {
 
                 <form className="rounded-tl-3xl rounded-bl-3xl" onSubmit={handleSubmit}>
                     <h2 className="text-2xl text-purple font-bold text-center mb-6">
-                        Contact us
+                        Drop Me a Line
                     </h2>
                     <div className="max-w-md mx-auto space-y-3 relative">
                         <input

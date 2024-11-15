@@ -2,3 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Add this to your global styles or in a CSS module */
+.nav-link {
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  
+  .nav-link:hover {
+    transform: scale(1.1); /* Smooth scale-up effect */
+  }
+  
+  /* Active link styles */
+  .active-link {
+    color: #6b46c1; /* Purple color */
+    font-weight: bold; /* Make text bold */
+  }
+  
+
